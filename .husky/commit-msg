@@ -20,12 +20,4 @@ if [ -d "$NVM_DIR" ]; then
     unset -f "$NODE_GLOBALS"
 fi
 
-RUNNERS="prettier build"
-for pm in $PKG_MGRS; do
-    if command -v "$pm" >/dev/null; then
-        for X in $RUNNERS; do
-            eval "$pm run $X"
-        done
-        break
-    fi
-done
+npx --no-install commitlint --edit "$1"

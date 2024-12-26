@@ -1,0 +1,1 @@
+npm run prettier && npx --no-install commitlint --edit "$1"
